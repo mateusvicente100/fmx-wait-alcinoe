@@ -1,0 +1,11 @@
+{
+	"name": "advanced",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./",
+	"projects": [],
+	"dependencies": {
+		"github.com/mateusvicente100/fmx-wait": ">0.0.0"
+	}
+}

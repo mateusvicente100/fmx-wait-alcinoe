@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3173F8D8-2A0C-4E5A-824B-016DB3823884}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="advanced\advanced.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="basic\basic.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="advanced">
+        <MSBuild Projects="advanced\advanced.dproj"/>
+    </Target>
+    <Target Name="advanced:Clean">
+        <MSBuild Projects="advanced\advanced.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="advanced:Make">
+        <MSBuild Projects="advanced\advanced.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="basic">
+        <MSBuild Projects="basic\basic.dproj"/>
+    </Target>
+    <Target Name="basic:Clean">
+        <MSBuild Projects="basic\basic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="basic:Make">
+        <MSBuild Projects="basic\basic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="advanced;basic"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="advanced:Clean;basic:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="advanced:Make;basic:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

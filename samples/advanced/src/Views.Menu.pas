@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects, FMX.Filter.Effects, FMX.StdCtrls, FMX.Objects,
-  FMX.Layouts, FMX.Controls.Presentation, ALFmxObjects, ALFmxLayouts;
+  FMX.Layouts, FMX.Controls.Presentation, ALFmxObjects, ALFmxLayouts, FMX.Wait;
 
 type
   TFrmMenu = class(TForm)
@@ -57,22 +57,30 @@ type
     Path15: TPath;
     Label14: TLabel;
     Path16: TPath;
-    Rectangle9: TRectangle;
-    Rectangle10: TALRectangle;
     Label15: TLabel;
     Label16: TLabel;
-    imgGoals: TPath;
-    lblGoals: TLabel;
-    ALRectangle1: TALRectangle;
-    Path17: TPath;
-    Label17: TLabel;
-    ALRectangle2: TALRectangle;
-    Path18: TPath;
-    Label18: TLabel;
     Rectangle11: TRectangle;
     Path19: TPath;
     Label19: TLabel;
     Path20: TPath;
+    Rectangle9: TRectangle;
+    Path17: TPath;
+    Label17: TLabel;
+    Path18: TPath;
+    Rectangle10: TRectangle;
+    Path21: TPath;
+    Label18: TLabel;
+    Path23: TPath;
+    Rectangle12: TRectangle;
+    Path22: TPath;
+    Label20: TLabel;
+    Path24: TPath;
+    Rectangle13: TRectangle;
+    Path25: TPath;
+    Label21: TLabel;
+    Path26: TPath;
+    procedure imgUserClick(Sender: TObject);
+    procedure btnOpcoesClick(Sender: TObject);
   end;
 
 var
@@ -81,5 +89,23 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TFrmMenu.btnOpcoesClick(Sender: TObject);
+begin
+  TWait.Start(vsbContent,
+    procedure
+    begin
+      Sleep(2000);
+    end);
+end;
+
+procedure TFrmMenu.imgUserClick(Sender: TObject);
+begin
+  TWait.Start(
+    procedure
+    begin
+      Sleep(2000);
+    end);
+end;
 
 end.

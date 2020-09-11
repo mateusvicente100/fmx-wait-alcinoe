@@ -43,7 +43,6 @@ begin
       // Do your process.
     end);
 
-
   // Not show loading frame.
   TWait.Run(
     procedure
