@@ -1,0 +1,47 @@
+object FrmMainMenu: TFrmMainMenu
+  Left = 0
+  Top = 0
+  ClientHeight = 500
+  ClientWidth = 300
+  Quality = HighQuality
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object btnShow: TButton
+    Anchors = []
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 50.000000000000000000
+    Position.Y = 141.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 75.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Show'
+    TextSettings.Font.Size = 20.000000000000000000
+    OnClick = btnShowClick
+  end
+  object lytShowHere: TLayout
+    Anchors = []
+    Position.X = 50.000000000000000000
+    Position.Y = 260.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 100.000000000000000000
+    Size.PlatformDefault = False
+    object retShowHere: TALRectangle
+      Align = Client
+      Fill.Color = xFFF4F4F4
+      Size.Width = 200.000000000000000000
+      Size.Height = 100.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object txtShowHere: TText
+        Align = Contents
+        Size.Width = 200.000000000000000000
+        Size.Height = 100.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Show here'
+        OnClick = txtShowHereClick
+      end
+    end
+  end
+end
